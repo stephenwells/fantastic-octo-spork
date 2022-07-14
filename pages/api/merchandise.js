@@ -14,7 +14,7 @@ export const merchData = [
   },
   {
     title: "p0wned Stickers",
-    image: "images/stickers.webp",
+    image: "/images/stickers.webp",
     description:
       "All your base are belong to us. Show your 1337 skillz with this stylish Sticker.",
   },

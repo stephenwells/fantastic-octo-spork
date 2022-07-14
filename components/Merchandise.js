@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./merchandise.module.scss";
 
 export default function Merchandise({ data }) {
@@ -8,7 +9,7 @@ export default function Merchandise({ data }) {
           <section className={styles.card} key={title}>
             <h3>{title}</h3>
             <figure>
-              <img alt={title} src={image} />
+              <Image src={image} height={340} width={340} alt={title} />
               <figcaption>{description}</figcaption>
             </figure>
             <div className={styles.button}>
