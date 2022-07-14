@@ -9,7 +9,8 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Columbia Merch Shop!</title>
+        <title>The Merch Shop!</title>
+        <meta name="robots" content="noindex, nofollow" />
         <meta
           name="description"
           content="All your favorite's in one place... "

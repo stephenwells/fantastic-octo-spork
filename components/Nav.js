@@ -20,10 +20,7 @@ export default function Nav() {
       </h1>
       <menu className={styles.utils}>
         <li>
-          <Link href="/">Home</Link>
-        </li>
-        <li>
-          <Link href="/">Rush</Link>
+          <Link href="/">Example</Link>
         </li>
         <li>
           <Counter />
