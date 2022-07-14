@@ -28,6 +28,37 @@ export default function Home() {
 
 console.clear();
 
+//Question #3
+console.log("--- Question #3 ---");
+const sortFiles = (files) => {
+  let arr = [];
+
+  for (let file of files) {
+    //split filename and extension using "." as a separator and create new array
+    let parts = file.split(/[\.]/g);
+    let ext = "";
+
+    //If 2 or more items in the array and file doesn't end with a ".", set ext variable equal to file extension
+    if (parts.length >= 2 && !file.endsWith(".")) ext = parts[parts.length - 1];
+
+    /* 
+    Push ext to new array. For the second position, replace the ext portion of the file string
+    with an empty string. The result contains an array containing [ext, filename.] 
+    */
+    arr.push([ext, file.replace(ext, "")]);
+  }
+
+  //return sorted array with reversed filename and extension values together
+  return arr.sort().map((x) => x[1].concat(x[0]));
+};
+
+console.log(sortFiles(["1.cad", "1.bat", "1.aa"]));
+console.log(sortFiles(["1.cad", "1.bat", "1.aa", "2.bat"]));
+console.log(sortFiles(["1.cad", "1.bat", "1.aa", ".bat"]));
+console.log(sortFiles(["1.cad", "1.bat", ".aa", ".bat"]));
+console.log(sortFiles(["1.cad", "1.", "1.aa"]));
+console.log(sortFiles(["1.cad", "1.bat", "1.aa", "1.aa.doc"]));
+
 //Question #4
 console.log("--- Question #4 ---");
 const median = (arr) => {
@@ -67,8 +98,8 @@ const match = (str, pattern) => {
     regex = /\\*/;
   } else if (/\?./.exec(pattern)) {
     /* https://regex101.com/r/sN8xFv/1
-       Match a digit (\d) that is neither preceded nor followed by digit, 
-       (?<!\d) being a negative lookbehind and (?!\d) being a negative lookahead 
+       Match a digit (\d) that is neither preceded nor followed by digit,
+       (?<!\d) being a negative lookbehind and (?!\d) being a negative lookahead
     */
     regex = /(?<!\d)\d(?!\d)/gm;
   } else {

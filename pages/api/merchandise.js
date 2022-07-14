@@ -20,6 +20,7 @@ export const merchData = [
   },
 ];
 
+//btw, i'm a drummer... can i tell you how much Neil Peart was an influence on me? :-)
 export const rush = [
   {
     name: {
