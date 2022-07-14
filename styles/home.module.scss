@@ -1,0 +1,46 @@
+/* @function */
+$base-font-size: 16px;
+@function convert-to-rem($px-value) {
+  $rem-value: $px-value / $base-font-size;
+  $zero-safe-rem-value: if($px-value == 0, 0,$rem-value);
+
+  @return $zero-safe-rem-value;
+}
+
+/* @mixin */
+@mixin breakpoint($point) {
+  @if $point == large {
+    @media only screen and (min-width: 1366px) {
+      @content;
+    }
+  }
+  @else if $point == desktop {
+    @media only screen and (min-width: 1024px) {
+      @content;
+    }
+  }
+  @else if $point == tablet {
+    @media only screen and (min-width: 600px) {
+      @content;
+    }
+  }
+}
+
+/* 
+@extend allows you to reference the styles of another class 
+using the pattern '@extend classname'. see styles/mast.module.scss for a reference.
+Placeholders can be used with @extend (using % syntax) which is usually preferable to 
+creating a mixin for outputting dry css
+*/
+
+  
+.main {
+  min-height: 100vh;
+  padding: 2em;
+  background: #f0f0f0;
+  @include breakpoint(large) {
+    & {
+      font-size: convert-to-rem(18px)+rem;/* 1.25rem */
+    }
+  }
+}

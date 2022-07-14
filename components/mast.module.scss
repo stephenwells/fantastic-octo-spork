@@ -1,0 +1,19 @@
+@mixin no-margin {
+    margin: 0;
+    padding: 0;
+}
+
+.mast {
+    color: #333;
+
+    h2 {
+        @include no-margin;
+        line-height:1.5;
+    }
+
+    p {
+        font-style: italic;
+        font-weight: 300;
+        @extend h2
+    }
+}
