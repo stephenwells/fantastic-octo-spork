@@ -1,4 +1,4 @@
-1. location of project after deployment to vercel!
+1. See https://fantastic-octo-spork.vercel.app/ for live production build
 
 2. @function, @mixin, @extend (@placeholders) see styles/Home.module.scss
 
