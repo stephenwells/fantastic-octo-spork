@@ -6,7 +6,7 @@
 
 4. See line #62 under pages/index.js for code.
 
-5. See line #84 under pages/index.js for code. Data resides under api/merchandise.js (line #23).
+5. See line #84 under pages/index.js for code. Data resides under /pages/api/merchandise.js (line #23).
 
 6. See line #92 under pages/index.js for code
 
